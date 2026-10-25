@@ -8,7 +8,7 @@
             
             <div class="p-card__content">
                 <form 
-                    hx-post="/api/collections/users/records" 
+                    hx-post="/api/auth/register" 
                     hx-target="#register-response"
                     hx-disabled-elt="#register-submit"
                     id="register-form"
@@ -29,7 +29,7 @@
                             pattern="^[a-zA-Z0-9_-]+$"
                             aria-describedby="username-help"
                             autocomplete="username"
-                            hx-post="/api/check-username"
+                            hx-get="/api/auth/check-username/{this.value}"
                             hx-trigger="blur delay:500ms"
                             hx-target="#username-availability"
                         >

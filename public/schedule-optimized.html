@@ -28,19 +28,19 @@
             <!-- En-tête avec navigation -->
             <div class="schedule-header">
                 <div class="date-navigation">
-                    <button class="date-nav-btn" hx-get="/api/schedule/previous-day" hx-target="#schedule-content" aria-label="Jour précédent">←</button>
+                    <button class="date-nav-btn" hx-get="/api/schedule/current?date=previous" hx-target="#schedule-content" aria-label="Jour précédent">←</button>
                     <div class="current-date">
                         <h1 id="current-date">
                             <span class="day-name">Aujourd'hui</span>
-                            <span class="date-number" hx-get="/api/schedule/current-date" hx-trigger="load" hx-target="this">7 septembre 2025</span>
+                            <span class="date-number" hx-get="/api/schedule/current" hx-trigger="load" hx-target="this">7 septembre 2025</span>
                         </h1>
                     </div>
-                    <button class="date-nav-btn" hx-get="/api/schedule/next-day" hx-target="#schedule-content" aria-label="Jour suivant">→</button>
+                    <button class="date-nav-btn" hx-get="/api/schedule/current?date=next" hx-target="#schedule-content" aria-label="Jour suivant">→</button>
                 </div>
 
                 <!-- Indicateur d'énergie -->
-                <div class="daily-energy-status" hx-get="/api/user/energy/current" hx-trigger="load" hx-target="this">
-                    <button class="energy-update-btn" hx-post="/api/user/energy/update" hx-target="this" aria-label="Mettre à jour votre niveau d'énergie">
+                <div class="daily-energy-status" hx-get="/api/schedule/energy" hx-trigger="load" hx-target="this">
+                    <button class="energy-update-btn" hx-post="/api/schedule/energy" hx-target="this" aria-label="Mettre à jour votre niveau d'énergie">
                         <span class="energy-icon">⚡</span>
                         <div class="energy-indicator">
                             <div class="energy-level filled"></div>

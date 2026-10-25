@@ -34,28 +34,28 @@
                     
                     <div class="p-card__content">
                         <form 
-                            hx-post="/api/collections/users/auth-with-password" 
+                            hx-post="/api/auth/login" 
                             hx-target="#login-response"
                             hx-disabled-elt="#login-submit"
                             id="login-form"
                             novalidate
                         >
                             <div class="form-group">
-                                <label for="username" class="form-label">
-                                    Nom d'utilisateur *
+                                <label for="email" class="form-label">
+                                    Adresse email *
                                 </label>
                                 <input 
-                                    type="text" 
-                                    id="username" 
-                                    name="identity"
+                                    type="email" 
+                                    id="email" 
+                                    name="email"
                                     class="form-input"
                                     required
-                                    autocomplete="username"
-                                    aria-describedby="username-help"
-                                    placeholder="Votre nom d'utilisateur"
+                                    autocomplete="email"
+                                    aria-describedby="email-help"
+                                    placeholder="votre@email.com"
                                 >
-                                <div class="form-help" id="username-help">
-                                    Utilisez votre nom d'utilisateur ou adresse email.
+                                <div class="form-help" id="email-help">
+                                    Utilisez l'adresse email de votre compte.
                                 </div>
                             </div>
 
